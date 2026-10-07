@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Just Press The Button", "Just Press The Button.csproj", "{A55CA6F6-0991-4FE9-9ACF-81119EA09FF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A55CA6F6-0991-4FE9-9ACF-81119EA09FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A55CA6F6-0991-4FE9-9ACF-81119EA09FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A55CA6F6-0991-4FE9-9ACF-81119EA09FF9}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{A55CA6F6-0991-4FE9-9ACF-81119EA09FF9}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{A55CA6F6-0991-4FE9-9ACF-81119EA09FF9}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{A55CA6F6-0991-4FE9-9ACF-81119EA09FF9}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
