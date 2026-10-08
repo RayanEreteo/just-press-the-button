@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c6vu0yv84fq7f" path="res://VT323-Regular.ttf" id="1_djgp3"]
 [ext_resource type="Script" uid="uid://bohfala1ekdsu" path="res://Scripts/button_confirmed.gd" id="1_hiuo4"]
 [ext_resource type="AudioStream" uid="uid://b5beaumc7duj1" path="res://SFX/virtual_vibes-glitch-sound-effect-hd-379466.mp3" id="4_liik5"]
+[ext_resource type="AudioStream" uid="uid://l66khrkljkll" path="res://SFX/freesound_community-ticket-validator-88908.mp3" id="5_t0lws"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_38a8g"]
 font = ExtResource("1_djgp3")
@@ -53,5 +54,8 @@ mouse_filter = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=420674262]
 stream = ExtResource("4_liik5")
+
+[node name="Press" type="AudioStreamPlayer" parent="." unique_id=673369815]
+stream = ExtResource("5_t0lws")
 
 [connection signal="visibility_changed" from="." to="Label" method="_on_button_confirmed_visibility_changed"]
