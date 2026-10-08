@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c1ugb3r7fkfts" path="res://Scripts/player.gd" id="1_rpqav"]
 [ext_resource type="Shader" uid="uid://csy3jhgpf2jpe" path="res://pixelate.gdshader" id="2_kyqiw"]
+[ext_resource type="AudioStream" uid="uid://qcxn41ctkl60" path="res://SFX/1.wav" id="3_5ixxa"]
+[ext_resource type="AudioStream" uid="uid://dpq00mtxmg8gg" path="res://SFX/3.wav" id="5_52ee3"]
+[ext_resource type="AudioStream" uid="uid://t0ea3gpresp2" path="res://SFX/Male_Breathing_Soft,_#1-1791479432168.wav" id="6_nn08x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cxt7r"]
 
@@ -10,6 +13,11 @@ render_priority = 0
 shader = ExtResource("2_kyqiw")
 
 [sub_resource type="QuadMesh" id="QuadMesh_e4k1b"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kyqiw"]
+streams_count = 2
+stream_0/stream = ExtResource("3_5ixxa")
+stream_1/stream = ExtResource("5_52ee3")
 
 [node name="Player" type="CharacterBody3D" unique_id=259794836]
 script = ExtResource("1_rpqav")
@@ -26,3 +34,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.6353072)
 material_override = SubResource("ShaderMaterial_gntrk")
 mesh = SubResource("QuadMesh_e4k1b")
+
+[node name="Footstep" type="AudioStreamPlayer" parent="." unique_id=1444398277]
+stream = SubResource("AudioStreamRandomizer_kyqiw")
+
+[node name="Breathing" type="AudioStreamPlayer" parent="." unique_id=1433242811]
+stream = ExtResource("6_nn08x")
+volume_db = -8.211
+autoplay = true
