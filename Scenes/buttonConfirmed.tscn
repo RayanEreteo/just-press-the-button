@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://chqmmixtnstrl"]
+
+[ext_resource type="Shader" uid="uid://6giw4d7v5roq" path="res://CRT.gdshader" id="1_bokvy"]
+[ext_resource type="FontFile" uid="uid://c6vu0yv84fq7f" path="res://VT323-Regular.ttf" id="1_djgp3"]
+[ext_resource type="Script" uid="uid://bohfala1ekdsu" path="res://Scripts/button_confirmed.gd" id="1_hiuo4"]
+[ext_resource type="AudioStream" uid="uid://b5beaumc7duj1" path="res://SFX/virtual_vibes-glitch-sound-effect-hd-379466.mp3" id="4_liik5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_38a8g"]
+font = ExtResource("1_djgp3")
+font_size = 60
+font_color = Color(0, 0.7801966, 0.3464166, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cxt7r"]
+shader = ExtResource("1_bokvy")
+shader_parameter/shake = 0.35200001672
+
+[node name="ButtonConfirmed" type="CanvasLayer" unique_id=441565147]
+visible = false
+
+[node name="Black" type="ColorRect" parent="." unique_id=633728526]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=433961227]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -30.0
+offset_right = 252.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button Press Confirmed"
+label_settings = SubResource("LabelSettings_38a8g")
+script = ExtResource("1_hiuo4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1939477255]
+material = SubResource("ShaderMaterial_cxt7r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=420674262]
+stream = ExtResource("4_liik5")
+
+[connection signal="visibility_changed" from="." to="Label" method="_on_button_confirmed_visibility_changed"]
