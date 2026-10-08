@@ -14,6 +14,10 @@ config/name="Just Press The Button"
 run/main_scene="uid://7kl2b7bcnmkt"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 
+[autoload]
+
+ButtonConfirmed="*uid://chqmmixtnstrl"
+
 [display]
 
 window/size/viewport_width=1920
@@ -63,3 +67,4 @@ action={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
