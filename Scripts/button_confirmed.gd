@@ -1,6 +1,7 @@
 extends Label
 
 @onready var audio = $"../AudioStreamPlayer"
+@onready var press = $"../Press"
 func _ready() -> void:
 	modulate.a = 0
 
@@ -10,6 +11,7 @@ func _on_button_confirmed_visibility_changed() -> void:
 
 func play_anim():
 	audio.play()
+	press.play()
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 1)
 	tween.play()
