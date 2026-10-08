@@ -8,6 +8,8 @@ data_*/
 mono_crash.*.json
 export_presets.cfg
 
+*.txt
+
 # System / Editor files
 .DS_Store
 thumbox.db
