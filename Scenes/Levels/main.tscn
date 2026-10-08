@@ -5,7 +5,6 @@
 [ext_resource type="Material" uid="uid://bfnylj4h0vd8g" path="res://glitch.tres" id="3_w0lsm"]
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_tpkgp"]
 [ext_resource type="PackedScene" uid="uid://01ynsx7nbcly" path="res://Scenes/Levels/angle.tscn" id="5_7i1ub"]
-[ext_resource type="PackedScene" uid="uid://chqmmixtnstrl" path="res://Scenes/buttonConfirmed.tscn" id="6_w0lsm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
 font_size = 40
@@ -176,5 +175,3 @@ targetLVL = ExtResource("5_7i1ub")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]
 environment = SubResource("Environment_cxt7r")
-
-[node name="ButtonConfirmed" parent="." unique_id=1606240988 instance=ExtResource("6_w0lsm")]
