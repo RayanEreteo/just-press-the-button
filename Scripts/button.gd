@@ -3,6 +3,8 @@ extends Area3D
 @onready var label: Label = $"../CanvasLayer/Inspect"
 var canPress = false
 
+@export var targetLVL: PackedScene = null
+
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		label.visible = true
@@ -17,4 +19,4 @@ func _on_body_exited(body: Node3D) -> void:
 func _process(delta: float) -> void:
 	if canPress:
 		if Input.is_action_just_pressed("action"):
-			get_tree().quit()
+			get_tree().change_scene_to_packed(targetLVL)
