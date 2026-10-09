@@ -16,8 +16,12 @@ func _on_area_entered(area: Area3D) -> void:
 
 func switchWalls():
 	if status == true:
-		disapearingWall.visible = false
-		appearingWall.visible = true
+		if disapearingWall :
+			disapearingWall.visible = false
+		if appearingWall :
+			appearingWall.visible = true
 	else :
-		disapearingWall.visible = true
-		appearingWall.visible = false
+		if disapearingWall :
+			disapearingWall.visible = true
+		if appearingWall:
+			appearingWall.visible = false
