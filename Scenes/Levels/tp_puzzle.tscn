@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b5beaumc7duj1" path="res://SFX/virtual_vibes-glitch-sound-effect-hd-379466.mp3" id="5_h6dd7"]
 [ext_resource type="Texture2D" uid="uid://cns4vqd7o1co0" path="res://Textures/eye.png" id="6_anlhm"]
 [ext_resource type="Script" uid="uid://cfu1v5uhj4mqg" path="res://Scripts/eyeofchange.gd" id="7_nq4tv"]
+[ext_resource type="AudioStream" uid="uid://bdt6hml2dljco" path="res://SFX/scheme.mp3" id="8_v5i1k"]
 
 [sub_resource type="Environment" id="Environment_cxt7r"]
 background_energy_multiplier = 0.0
@@ -229,8 +230,8 @@ size = Vector3(4, 0.3, 4)
 material = ExtResource("1_h6dd7")
 
 [node name="Wall62" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1634239925]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -21.877892, 1.8587854, -4)
-size = Vector3(4, 0.3, 4)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -21.877892, 1.8587854, -3.8278809)
+size = Vector3(4, 0.3, 3.6557617)
 material = ExtResource("1_h6dd7")
 
 [node name="Wall70" type="CSGBox3D" parent="CSGCombiner3D" unique_id=725009983]
@@ -239,8 +240,8 @@ size = Vector3(4, 0.3, 3.9047852)
 material = ExtResource("1_h6dd7")
 
 [node name="Wall71" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1416683160]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -33.39912, 1.8587854, -3.9523926)
-size = Vector3(4, 0.3, 3.9047852)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -33.39912, 1.8587854, -4.045044)
+size = Vector3(4, 0.3, 4.090088)
 material = ExtResource("1_h6dd7")
 
 [node name="Wall63" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2033720013]
@@ -359,7 +360,7 @@ size = Vector3(4, 0.3, 4)
 material = ExtResource("1_h6dd7")
 
 [node name="Wall36" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1528405727]
-transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, -31.275402, 1.8587854, -6)
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, -31.275402, 1.8587854, -6.169426)
 size = Vector3(4, 0.3, 4.5566406)
 material = ExtResource("1_h6dd7")
 
@@ -374,8 +375,8 @@ size = Vector3(4, 0.3, 4)
 material = ExtResource("1_h6dd7")
 
 [node name="Wall69" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1847279689]
-transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, -23.997082, 1.8587854, -5.8206263)
-size = Vector3(4, 0.3, 4)
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, -23.868237, 1.8587854, -5.8206263)
+size = Vector3(4, 0.3, 4.2576904)
 material = ExtResource("1_h6dd7")
 
 [node name="Wall54" type="CSGBox3D" parent="CSGCombiner3D" unique_id=768064026]
@@ -539,9 +540,10 @@ shaded = true
 alpha_cut = 1
 texture = ExtResource("6_anlhm")
 
-[node name="Area3D" type="Area3D" parent="EyeOfChange" unique_id=22523298 node_paths=PackedStringArray("disapearingWall")]
+[node name="Area3D" type="Area3D" parent="EyeOfChange" unique_id=22523298 node_paths=PackedStringArray("disapearingWall", "hiddenEye")]
 script = ExtResource("7_nq4tv")
 disapearingWall = NodePath("../../CSGCombiner3D/Disapearwall1")
+hiddenEye = NodePath("../../EyeOfChange2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EyeOfChange/Area3D" unique_id=1827522045]
 transform = Transform3D(1, 0, -3.5527137e-14, 0, 1, 0, 3.5527137e-14, 0, 1, -0.10928349, -0.30212784, 0)
@@ -549,17 +551,22 @@ shape = SubResource("BoxShape3D_e4k1b")
 
 [node name="EyeOfChange2" type="Sprite3D" parent="." unique_id=1040966721]
 transform = Transform3D(4.1523847e-09, 0, -0.055, 0, 0.055, 0, 0.055, 0, 4.1523847e-09, 1.8048341, 1.8580166, 0)
+visible = false
 shaded = true
 alpha_cut = 1
 texture = ExtResource("6_anlhm")
 
-[node name="Area3D" type="Area3D" parent="EyeOfChange2" unique_id=1528549637 node_paths=PackedStringArray("disapearingWall")]
+[node name="Area3D" type="Area3D" parent="EyeOfChange2" unique_id=1528549637 node_paths=PackedStringArray("disapearingWall", "hiddenEye")]
 script = ExtResource("7_nq4tv")
 disapearingWall = NodePath("../../CSGCombiner3D/AppearingWall1")
+hiddenEye = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EyeOfChange2/Area3D" unique_id=1188128217]
 transform = Transform3D(1, 0, -3.5527137e-14, 0, 1, 0, 3.5527137e-14, 0, 1, -0.10928349, -0.30212784, 0)
 shape = SubResource("BoxShape3D_e4k1b")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1900347005]
+stream = ExtResource("8_v5i1k")
 
 [connection signal="area_entered" from="EyeOfChange/Area3D" to="EyeOfChange/Area3D" method="_on_area_entered"]
 [connection signal="area_entered" from="EyeOfChange2/Area3D" to="EyeOfChange2/Area3D" method="_on_area_entered"]
