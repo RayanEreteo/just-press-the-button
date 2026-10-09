@@ -33,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=130132998]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1818794778]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.6353072)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.35862795)
 material_override = SubResource("ShaderMaterial_gntrk")
 mesh = SubResource("QuadMesh_e4k1b")
 
