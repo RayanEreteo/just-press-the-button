@@ -16,6 +16,8 @@ func _on_area_entered(area: Area3D) -> void:
 
 func switchWalls():
 	if status == true:
-		get_tree().quit()
+		disapearingWall.visible = false
+		appearingWall.visible = true
 	else :
-		print("Closed")
+		disapearingWall.visible = true
+		appearingWall.visible = false
