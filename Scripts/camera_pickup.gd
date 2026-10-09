@@ -12,6 +12,9 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("action"):
 			Globals.canFlash = true
 			tuto.visible = true
+			visible = false
+			await get_tree().create_timer(3).timeout
+			tuto.visible = false
 			queue_free()
 
 func _on_body_entered(body: Node3D) -> void:
