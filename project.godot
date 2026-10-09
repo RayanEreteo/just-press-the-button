@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 [autoload]
 
 ButtonConfirmed="*uid://chqmmixtnstrl"
+Rumble="*uid://c2xgbs0vw88tm"
 
 [display]
 

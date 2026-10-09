@@ -6,8 +6,11 @@ extends Area3D
 @onready var lightoff = $"../LightsOff"
 @onready var walk = $"../Walk"
 
+var debounce = true
+
 func _on_body_entered(body: Node3D) -> void:
-	if body.name == "Player":
+	if body.name == "Player" && debounce:
+		debounce = false
 		breaklight.queue_free()
 		breaklight2.queue_free()
 		lightoff.play()

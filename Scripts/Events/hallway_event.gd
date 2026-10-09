@@ -10,12 +10,12 @@ var debounce = true
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player" && debounce:
+		debounce = false
 		var tween = get_tree().create_tween()
 		tween.tween_property(wall, "position:z", 48.898, 1)
 		tween.play()
 		bass.play()
 		speciallight.visible = true
-		debounce = false
 
 func _on_tp_trigger_body_entered(body: Node3D) -> void:
 	if body.name == "Player":

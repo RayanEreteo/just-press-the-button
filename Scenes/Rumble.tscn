@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c2xgbs0vw88tm"]
+
+[ext_resource type="AudioStream" uid="uid://dr7ytegu6exgj" path="res://SFX/freesound_community-cinematicrumble-26251.mp3" id="1_wjffp"]
+
+[node name="Rumble" type="AudioStreamPlayer" unique_id=1642839905]
+stream = ExtResource("1_wjffp")
+volume_db = -20.639
+autoplay = true
