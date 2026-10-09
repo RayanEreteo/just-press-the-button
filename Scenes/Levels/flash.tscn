@@ -2,23 +2,18 @@
 
 [ext_resource type="Material" uid="uid://dqvi175memeln" path="res://Textures/tiles.tres" id="1_xsewx"]
 [ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="2_22n74"]
-[ext_resource type="Material" uid="uid://bfnylj4h0vd8g" path="res://glitch.tres" id="3_o21o6"]
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_m8nss"]
+[ext_resource type="Script" uid="uid://mx458ccj1sr5" path="res://Scripts/camera_pickup.gd" id="4_xsewx"]
 [ext_resource type="PackedScene" uid="uid://c22daw22xm60p" path="res://3DModel/old_camera/scene.gltf" id="5_xsewx"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
-font_size = 40
-outline_size = 1
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 4
-stacked_shadow_count = 1
-stacked_shadow_0/offset = Vector2(3.665, 1)
 
 [sub_resource type="Environment" id="Environment_cxt7r"]
 background_energy_multiplier = 0.0
 ambient_light_energy = 0.0
 glow_enabled = true
 glow_intensity = 2.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxt7r"]
+size = Vector3(1.1782227, 2.140625, 1.8457031)
 
 [node name="Node3D" type="Node3D" unique_id=266369204]
 
@@ -138,39 +133,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2723093, 2.011785, 0)
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -0.47801685, 1.5459182, -0.15168326)
 speed = 3.25
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1846656397]
-
-[node name="Glitch" type="ColorRect" parent="CanvasLayer" unique_id=599848636]
-visible = false
-material = ExtResource("3_o21o6")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Inspect" type="Label" parent="CanvasLayer" unique_id=1369563992]
-visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -142.0
-offset_top = -90.0
-offset_right = 206.0
-offset_bottom = -26.555054
-grow_horizontal = 2
-grow_vertical = 0
-text = "Click [MOUSE 1] to press the button."
-label_settings = SubResource("LabelSettings_jjvhh")
-
 [node name="Button" parent="." unique_id=1774173384 instance=ExtResource("4_m8nss")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.556579, 0.85343254, -6.314411)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]
 environment = SubResource("Environment_cxt7r")
 
-[node name="Camera" parent="." unique_id=399364305 instance=ExtResource("5_xsewx")]
-transform = Transform3D(-0.0051763784, 0, 0.019318515, 0, 0.02, 0, -0.019318515, 0, -0.0051763784, -3.9396694, 1.3870004, 0.06545806)
+[node name="Area3D" type="Area3D" parent="." unique_id=1529252823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5942917, 1.7630682, 0)
+script = ExtResource("4_xsewx")
+
+[node name="Camera" parent="Area3D" unique_id=399364305 instance=ExtResource("5_xsewx")]
+transform = Transform3D(-0.0057424274, 0, 0.01915788, 0, 0.02, 0, -0.01915788, 0, -0.0057424274, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Area3D/Camera" unique_id=1432792925]
+transform = Transform3D(1, 0, 1.9073484e-08, 0, 1, 0, -1.9073484e-08, 0, 1, 0, 12.441322, 0)
+light_color = Color(0.5253412, 0.50323075, 0.35290048, 1)
+omni_range = 2.916
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=249869631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08911133, -0.5703125, 0.055664063)
+shape = SubResource("BoxShape3D_cxt7r")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

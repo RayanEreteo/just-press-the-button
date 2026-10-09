@@ -15,10 +15,14 @@ var footstep_distance: float = 0.0
 @onready var head: Node3D = $Head
 @onready var footstep = $Footstep
 @onready var glitch = $CanvasLayer/Glitch
+@onready var flash = $Head/Camera3D/Flash
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Flash") && Globals.canFlash:
+		flash.light_energy = 2
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
