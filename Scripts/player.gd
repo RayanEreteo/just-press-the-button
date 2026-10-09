@@ -14,7 +14,7 @@ var footstep_distance: float = 0.0
 
 @onready var head: Node3D = $Head
 @onready var footstep = $Footstep
-
+@onready var glitch = $CanvasLayer/Glitch
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -80,3 +80,6 @@ func handle_footsteps(delta: float) -> void:
 		footstep_distance = 0.0
 
 		footstep.play()
+
+func activate_glitch(status: bool):
+	glitch.visible = status
