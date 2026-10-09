@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c1ugb3r7fkfts" path="res://Scripts/player.gd" id="1_rpqav"]
 [ext_resource type="Shader" uid="uid://csy3jhgpf2jpe" path="res://pixelate.gdshader" id="2_kyqiw"]
 [ext_resource type="AudioStream" uid="uid://qcxn41ctkl60" path="res://SFX/1.wav" id="3_5ixxa"]
+[ext_resource type="AudioStream" uid="uid://nlk0hx6etwti" path="res://SFX/flash.mp3" id="3_52ee3"]
 [ext_resource type="AudioStream" uid="uid://dpq00mtxmg8gg" path="res://SFX/3.wav" id="5_52ee3"]
 [ext_resource type="Material" uid="uid://bfnylj4h0vd8g" path="res://glitch.tres" id="6_52ee3"]
 [ext_resource type="AudioStream" uid="uid://t0ea3gpresp2" path="res://SFX/Male_Breathing_Soft,_#1-1791479432168.wav" id="6_nn08x"]
@@ -38,6 +39,9 @@ mesh = SubResource("QuadMesh_e4k1b")
 
 [node name="Flash" type="SpotLight3D" parent="Head/Camera3D" unique_id=1035754882]
 light_energy = 0.0
+
+[node name="FlashAudio" type="AudioStreamPlayer" parent="Head/Camera3D/Flash" unique_id=957074474]
+stream = ExtResource("3_52ee3")
 
 [node name="Footstep" type="AudioStreamPlayer" parent="." unique_id=1444398277]
 stream = SubResource("AudioStreamRandomizer_kyqiw")
