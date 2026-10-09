@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Just Press The Button"
-run/main_scene="uid://ry8bnapbfn1v"
+run/main_scene="uid://e8r1ppi62454"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 
 [autoload]
 
 ButtonConfirmed="*uid://chqmmixtnstrl"
 Rumble="*uid://c2xgbs0vw88tm"
+Globals="*uid://0o3imrav2n2k"
 
 [display]
 
@@ -56,6 +57,11 @@ right={
 action={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(193, 8),"global_position":Vector2(202, 56),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+Flash={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(205, 2),"global_position":Vector2(214, 50),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
