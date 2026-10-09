@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="2_ix8p3"]
 [ext_resource type="Material" uid="uid://bfnylj4h0vd8g" path="res://glitch.tres" id="3_atqs2"]
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_av44y"]
+[ext_resource type="PackedScene" uid="uid://ry8bnapbfn1v" path="res://Scenes/Levels/infinite_hallway.tscn" id="5_av44y"]
 [ext_resource type="AudioStream" uid="uid://bo254r5u5kmln" path="res://SFX/freesound_community-monster-breathing-67456.mp3" id="5_m5jy1"]
 [ext_resource type="AudioStream" uid="uid://bgr8yhjia7lh4" path="res://SFX/monster_footstep.wav" id="6_atqs2"]
 [ext_resource type="Script" uid="uid://bagm0wnej126l" path="res://Scripts/Events/monster_first_encounter.gd" id="6_q687c"]
@@ -510,6 +511,7 @@ label_settings = SubResource("LabelSettings_jjvhh")
 
 [node name="Button" parent="." unique_id=1774173384 instance=ExtResource("4_av44y")]
 transform = Transform3D(5.7620454e-08, 0, -1, 0, 1, 0, 1, 0, 5.7620454e-08, 4.0753193, 0.85343254, -0.6707051)
+targetLVL = ExtResource("5_av44y")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]
 environment = SubResource("Environment_cxt7r")
