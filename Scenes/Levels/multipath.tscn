@@ -27,6 +27,9 @@ glow_intensity = 2.1
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxt7r"]
 size = Vector3(1, 1.5229492, 4.0202637)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4k1b"]
+size = Vector3(1, 5.158203, 11.855835)
+
 [node name="Node3D" type="Node3D" unique_id=266369204]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=394078374]
@@ -536,5 +539,12 @@ shape = SubResource("BoxShape3D_cxt7r")
 
 [node name="LightsOff" type="AudioStreamPlayer" parent="." unique_id=1734534857]
 stream = ExtResource("7_ix8p3")
+
+[node name="InvisibleWall" type="StaticBody3D" parent="." unique_id=466627837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.571948, 0, 3.7130961)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall" unique_id=1154011024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0791016, 0.3616333)
+shape = SubResource("BoxShape3D_e4k1b")
 
 [connection signal="body_entered" from="EventTrigger" to="EventTrigger" method="_on_body_entered"]
