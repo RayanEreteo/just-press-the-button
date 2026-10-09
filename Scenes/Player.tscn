@@ -36,6 +36,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.6353072)
 material_override = SubResource("ShaderMaterial_gntrk")
 mesh = SubResource("QuadMesh_e4k1b")
 
+[node name="Flash" type="SpotLight3D" parent="Head/Camera3D" unique_id=1035754882]
+light_energy = 0.0
+
 [node name="Footstep" type="AudioStreamPlayer" parent="." unique_id=1444398277]
 stream = SubResource("AudioStreamRandomizer_kyqiw")
 
