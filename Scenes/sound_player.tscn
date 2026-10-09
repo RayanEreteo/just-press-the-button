@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bbvb42uqy3u3e"]
+
+[ext_resource type="Script" uid="uid://drtg2jan1mojg" path="res://Scripts/Events/sound_player_by_trigger.gd" id="1_k4ecf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4k1b"]
+
+[node name="SoundPlayer" type="Area3D" unique_id=595130727 node_paths=PackedStringArray("SFX")]
+script = ExtResource("1_k4ecf")
+SFX = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=908843649]
+shape = SubResource("BoxShape3D_e4k1b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

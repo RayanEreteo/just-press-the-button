@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_m8nss"]
 [ext_resource type="Script" uid="uid://mx458ccj1sr5" path="res://Scripts/camera_pickup.gd" id="4_xsewx"]
 [ext_resource type="PackedScene" uid="uid://c22daw22xm60p" path="res://3DModel/old_camera/scene.gltf" id="5_xsewx"]
+[ext_resource type="AudioStream" uid="uid://t6rccg8ul8k5" path="res://SFX/Creature_whisper,_sa_#3-1791552489024.wav" id="6_22n74"]
+[ext_resource type="PackedScene" uid="uid://bbvb42uqy3u3e" path="res://Scenes/sound_player.tscn" id="7_o21o6"]
 
 [sub_resource type="Environment" id="Environment_cxt7r"]
 background_energy_multiplier = 0.0
@@ -121,6 +123,21 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -16.
 size = Vector3(4, 0.3, 4)
 material = ExtResource("1_xsewx")
 
+[node name="Wall34" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1310809570]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -6.1562614, 1.8587854, -12)
+size = Vector3(4, 0.3, 4)
+material = ExtResource("1_xsewx")
+
+[node name="Wall35" type="CSGBox3D" parent="CSGCombiner3D" unique_id=283668856]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -6.1562614, 1.8587854, -8)
+size = Vector3(4, 0.3, 4)
+material = ExtResource("1_xsewx")
+
+[node name="Wall36" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1586012902]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -6.1562614, 1.8587854, -4)
+size = Vector3(4, 0.3, 4)
+material = ExtResource("1_xsewx")
+
 [node name="Wall26" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1254026763]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -18, 1.8587854, -8)
 size = Vector3(4, 0.3, 4)
@@ -132,7 +149,22 @@ size = Vector3(4, 0.3, 4)
 material = ExtResource("1_xsewx")
 
 [node name="Wall32" type="CSGBox3D" parent="CSGCombiner3D" unique_id=927779311]
-transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -6.626132, 1.8587854, -8.478424)
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -8.123894, 1.8587854, -8.478424)
+size = Vector3(4, 0.3, 4)
+material = ExtResource("1_xsewx")
+
+[node name="Wall37" type="CSGBox3D" parent="CSGCombiner3D" unique_id=630311501]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -8.123894, 1.8587854, -13.7650385)
+size = Vector3(4, 0.3, 4)
+material = ExtResource("1_xsewx")
+
+[node name="Wall38" type="CSGBox3D" parent="CSGCombiner3D" unique_id=28622502]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -12.123894, 1.8587854, -13.7650385)
+size = Vector3(4, 0.3, 4)
+material = ExtResource("1_xsewx")
+
+[node name="Wall39" type="CSGBox3D" parent="CSGCombiner3D" unique_id=273735538]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -16.123894, 1.8587854, -13.7650385)
 size = Vector3(4, 0.3, 4)
 material = ExtResource("1_xsewx")
 
@@ -269,7 +301,7 @@ transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -0.4
 speed = 3.25
 
 [node name="Button" parent="." unique_id=1774173384 instance=ExtResource("4_m8nss")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.556579, 0.85343254, -8.314411)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.336969, 0.85343254, -3.3986607)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]
 environment = SubResource("Environment_cxt7r")
@@ -289,5 +321,13 @@ omni_range = 2.916
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=249869631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08911133, -0.5703125, 0.055664063)
 shape = SubResource("BoxShape3D_cxt7r")
+
+[node name="CreatureWhisper,Sa#31791552489024" type="AudioStreamPlayer3D" parent="." unique_id=1044425195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1951275, 0.9480616, -0.49737203)
+stream = ExtResource("6_22n74")
+
+[node name="SoundPlayer" parent="." unique_id=595130727 node_paths=PackedStringArray("SFX") instance=ExtResource("7_o21o6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.289106, 0.6658871, -7.68642)
+SFX = NodePath("../CreatureWhisper,Sa#31791552489024")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
