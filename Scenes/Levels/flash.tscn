@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dqvi175memeln" path="res://Textures/tiles.tres" id="1_xsewx"]
 [ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="2_22n74"]
+[ext_resource type="PackedScene" uid="uid://buvsffxtsgpw1" path="res://Scenes/Levels/tp_puzzle.tscn" id="4_diemw"]
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_m8nss"]
 [ext_resource type="Script" uid="uid://mx458ccj1sr5" path="res://Scripts/camera_pickup.gd" id="4_xsewx"]
 [ext_resource type="PackedScene" uid="uid://c22daw22xm60p" path="res://3DModel/old_camera/scene.gltf" id="5_xsewx"]
@@ -302,6 +303,7 @@ speed = 3.25
 
 [node name="Button" parent="." unique_id=1774173384 instance=ExtResource("4_m8nss")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.336969, 0.85343254, -3.3986607)
+targetLVL = ExtResource("4_diemw")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]
 environment = SubResource("Environment_cxt7r")
