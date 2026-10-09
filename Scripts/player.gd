@@ -23,7 +23,7 @@ var flashDebounce = true
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Flash") && Globals.canFlash && flashDebounce:
 		flashDebounce = false
 		flash.light_energy = 2
@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 		await get_tree().create_timer(3).timeout
 		flashDebounce = true
 	if flash.light_energy > 0:
-		flash.light_energy -= 0.1
+		flash.light_energy -= 0.8 * delta
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
