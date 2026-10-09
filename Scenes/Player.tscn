@@ -10,7 +10,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cxt7r"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gntrk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhhdu"]
 render_priority = 0
 shader = ExtResource("2_kyqiw")
 
@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1818794778]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.35862795)
-material_override = SubResource("ShaderMaterial_gntrk")
+material_override = SubResource("ShaderMaterial_bhhdu")
 mesh = SubResource("QuadMesh_e4k1b")
 
 [node name="Flash" type="SpotLight3D" parent="Head/Camera3D" unique_id=1035754882]
