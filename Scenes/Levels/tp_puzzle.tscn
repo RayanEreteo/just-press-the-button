@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://dqvi175memeln" path="res://Textures/tiles.tres" id="1_h6dd7"]
 [ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="2_anlhm"]
 [ext_resource type="PackedScene" uid="uid://c3720mmcrw886" path="res://Scenes/tp_trigger.tscn" id="4_i74x7"]
+[ext_resource type="PackedScene" uid="uid://c6wuk4336ejqm" path="res://Scenes/Levels/greenlightredlight.tscn" id="4_jdpgx"]
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_v5i1k"]
 [ext_resource type="AudioStream" uid="uid://b5beaumc7duj1" path="res://SFX/virtual_vibes-glitch-sound-effect-hd-379466.mp3" id="5_h6dd7"]
 [ext_resource type="Texture2D" uid="uid://cns4vqd7o1co0" path="res://Textures/eye.png" id="6_anlhm"]
@@ -517,6 +518,7 @@ speed = 3.25
 
 [node name="Button" parent="." unique_id=1774173384 instance=ExtResource("4_v5i1k")]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -19.637266, 0.85343254, 4.9180965)
+targetLVL = ExtResource("4_jdpgx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]
 environment = SubResource("Environment_cxt7r")
