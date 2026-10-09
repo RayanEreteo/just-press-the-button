@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c22daw22xm60p" path="res://3DModel/old_camera/scene.gltf" id="5_xsewx"]
 [ext_resource type="AudioStream" uid="uid://t6rccg8ul8k5" path="res://SFX/Creature_whisper,_sa_#3-1791552489024.wav" id="6_22n74"]
 [ext_resource type="PackedScene" uid="uid://bbvb42uqy3u3e" path="res://Scenes/sound_player.tscn" id="7_o21o6"]
+[ext_resource type="FontFile" uid="uid://c6vu0yv84fq7f" path="res://VT323-Regular.ttf" id="9_diemw"]
 
 [sub_resource type="Environment" id="Environment_cxt7r"]
 background_energy_multiplier = 0.0
@@ -17,6 +18,10 @@ glow_intensity = 2.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxt7r"]
 size = Vector3(1.1782227, 2.140625, 1.8457031)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cxt7r"]
+font = ExtResource("9_diemw")
+font_size = 37
 
 [node name="Node3D" type="Node3D" unique_id=266369204]
 
@@ -331,5 +336,21 @@ stream = ExtResource("6_22n74")
 [node name="SoundPlayer" parent="." unique_id=595130727 node_paths=PackedStringArray("SFX") instance=ExtResource("7_o21o6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.289106, 0.6658871, -7.68642)
 SFX = NodePath("../CreatureWhisper,Sa#31791552489024")
+
+[node name="Label" type="Label" parent="." unique_id=1653183531]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -281.0
+offset_top = -74.900024
+offset_right = 281.0
+offset_bottom = -36.900024
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press [MOUSE 2] to use the camera flash."
+label_settings = SubResource("LabelSettings_cxt7r")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

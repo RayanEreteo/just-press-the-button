@@ -247,7 +247,7 @@ text = "Click [MOUSE 1] to press the button."
 label_settings = SubResource("LabelSettings_jjvhh")
 
 [node name="Button" parent="." unique_id=1774173384 instance=ExtResource("4_v5i1k")]
-transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -11.924681, 0.85343254, 7.879804)
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -19.556782, 0.85343254, 7.879804)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]
 environment = SubResource("Environment_cxt7r")
