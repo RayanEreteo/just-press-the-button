@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_v5i1k"]
 [ext_resource type="AudioStream" uid="uid://b5beaumc7duj1" path="res://SFX/virtual_vibes-glitch-sound-effect-hd-379466.mp3" id="5_h6dd7"]
 [ext_resource type="Texture2D" uid="uid://cns4vqd7o1co0" path="res://Textures/eye.png" id="6_anlhm"]
+[ext_resource type="Script" uid="uid://cfu1v5uhj4mqg" path="res://Scripts/eyeofchange.gd" id="7_nq4tv"]
 
 [sub_resource type="Environment" id="Environment_cxt7r"]
 background_energy_multiplier = 0.0
 ambient_light_energy = 0.0
 glow_enabled = true
 glow_intensity = 2.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4k1b"]
+size = Vector3(15.429749, 15.767334, 1)
 
 [node name="Node3D" type="Node3D" unique_id=266369204]
 
@@ -401,7 +405,17 @@ destination = Vector3(-0.47, 1, -0.15)
 [node name="Glitch" type="AudioStreamPlayer" parent="." unique_id=1879536527]
 stream = ExtResource("5_h6dd7")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=312845213]
-transform = Transform3D(4.1523847e-09, 0, -0.055, 0, 0.055, 0, 0.055, 0, 4.1523847e-09, 1.8471754, 1.8580166, 0)
+[node name="EyeOfChange" type="Sprite3D" parent="." unique_id=312845213]
+transform = Transform3D(4.1523847e-09, 0, -0.055, 0, 0.055, 0, 0.055, 0, 4.1523847e-09, -25.162066, 1.8580166, 0)
+shaded = true
 alpha_cut = 1
 texture = ExtResource("6_anlhm")
+
+[node name="Area3D" type="Area3D" parent="EyeOfChange" unique_id=22523298]
+script = ExtResource("7_nq4tv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EyeOfChange/Area3D" unique_id=1827522045]
+transform = Transform3D(1, 0, -3.5527137e-14, 0, 1, 0, 3.5527137e-14, 0, 1, -0.10928349, -0.30212784, 0)
+shape = SubResource("BoxShape3D_e4k1b")
+
+[connection signal="area_entered" from="EyeOfChange/Area3D" to="EyeOfChange/Area3D" method="_on_area_entered"]

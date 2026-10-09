@@ -17,7 +17,7 @@ var footstep_distance: float = 0.0
 @onready var glitch = $CanvasLayer/Glitch
 @onready var flash = $Head/Camera3D/Flash
 @onready var flashaudio = $Head/Camera3D/Flash/FlashAudio
-
+@onready var flashTrigger = $Head/Camera3D/Flash/FlashTrigger
 var flashDebounce = true
 
 func _ready() -> void:
@@ -26,8 +26,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Flash") && Globals.canFlash && flashDebounce:
 		flashDebounce = false
+		flashTrigger.monitorable = true
 		flash.light_energy = 2
 		flashaudio.play()
+		await get_tree().create_timer(0.3).timeout
+		flashTrigger.monitorable = false
 		await get_tree().create_timer(3).timeout
 		flashDebounce = true
 	if flash.light_energy > 0:

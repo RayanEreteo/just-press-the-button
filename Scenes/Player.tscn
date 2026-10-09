@@ -16,6 +16,9 @@ shader = ExtResource("2_kyqiw")
 
 [sub_resource type="QuadMesh" id="QuadMesh_e4k1b"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxt7r"]
+size = Vector3(0.6077881, 1, 0.8937988)
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kyqiw"]
 streams_count = 2
 stream_0/stream = ExtResource("3_5ixxa")
@@ -42,6 +45,13 @@ light_energy = 0.0
 
 [node name="FlashAudio" type="AudioStreamPlayer" parent="Head/Camera3D/Flash" unique_id=957074474]
 stream = ExtResource("3_52ee3")
+
+[node name="FlashTrigger" type="Area3D" parent="Head/Camera3D/Flash" unique_id=588669834]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Flash/FlashTrigger" unique_id=605840463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28607178, 0, -1.0440674)
+shape = SubResource("BoxShape3D_cxt7r")
 
 [node name="Footstep" type="AudioStreamPlayer" parent="." unique_id=1444398277]
 stream = SubResource("AudioStreamRandomizer_kyqiw")
