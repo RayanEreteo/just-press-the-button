@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="2_0ohnv"]
 [ext_resource type="Material" uid="uid://bfnylj4h0vd8g" path="res://glitch.tres" id="3_okd83"]
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_5apv1"]
-[ext_resource type="PackedScene" uid="uid://ry8bnapbfn1v" path="res://Scenes/Levels/infinite_hallway.tscn" id="5_vol2c"]
+[ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="5_vol2c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
 font_size = 40

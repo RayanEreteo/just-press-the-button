@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Just Press The Button"
-run/main_scene="uid://c6wuk4336ejqm"
-config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
+run/main_scene="uid://7kl2b7bcnmkt"
+config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
 

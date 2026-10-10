@@ -1,14 +1,13 @@
 [gd_scene format=4 uid="uid://ry8bnapbfn1v"]
 
 [ext_resource type="Material" uid="uid://dqvi175memeln" path="res://Textures/tiles.tres" id="1_cyvex"]
-[ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="2_ds2lg"]
 [ext_resource type="AudioStream" uid="uid://b5beaumc7duj1" path="res://SFX/virtual_vibes-glitch-sound-effect-hd-379466.mp3" id="3_5hw7o"]
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_jnhrv"]
 [ext_resource type="PackedScene" uid="uid://c3720mmcrw886" path="res://Scenes/tp_trigger.tscn" id="6_ds2lg"]
 [ext_resource type="Script" uid="uid://b6sfbe5u3jb7t" path="res://Scripts/Events/hallway_event.gd" id="6_etopo"]
 [ext_resource type="AudioStream" uid="uid://bgjif4fqwlmug" path="res://SFX/dragon-studio-drop-the-bass-463664.mp3" id="7_5hw7o"]
 [ext_resource type="AudioStream" uid="uid://dd7xoo2rqi81v" path="res://SFX/freesound_community-light-switch-turn-on-47753.mp3" id="8_ca0ke"]
-[ext_resource type="PackedScene" uid="uid://e8r1ppi62454" path="res://Scenes/Levels/flash.tscn" id="8_cyvex"]
+[ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="8_cyvex"]
 
 [sub_resource type="Environment" id="Environment_cxt7r"]
 background_energy_multiplier = 0.0
@@ -622,7 +621,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.149293, 2.011785, 44.2806
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4437451, 2.011785, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=259794836 instance=ExtResource("2_ds2lg")]
+[node name="Player" parent="." unique_id=259794836 instance=ExtResource("8_cyvex")]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -0.47801685, 1.5459182, -0.15168326)
 speed = 3.25
 
@@ -660,6 +659,6 @@ stream = ExtResource("7_5hw7o")
 
 [node name="RealBTN" parent="." unique_id=441199934 instance=ExtResource("4_jnhrv")]
 transform = Transform3D(5.7620454e-08, 0, -1, 0, 1, 0, 1, 0, 5.7620454e-08, 4.0523195, 0.8534326, 12.140304)
-targetLVL = ExtResource("8_cyvex")
+targetLVL = "res://Scenes/Levels/flash.tscn"
 
 [connection signal="body_entered" from="HallwayTrigger" to="HallwayTrigger" method="_on_body_entered"]

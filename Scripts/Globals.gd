@@ -1,3 +1,3 @@
 extends Node
 
-var canFlash = true
+var canFlash = false

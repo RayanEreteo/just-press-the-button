@@ -4,7 +4,7 @@ extends Area3D
 
 var canPress = false
 
-@export var targetLVL: PackedScene = null
+@export var targetLVL: String
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
@@ -18,5 +18,5 @@ func _on_body_exited(body: Node3D) -> void:
 func _process(_delta: float) -> void:
 	if canPress:
 		if Input.is_action_just_pressed("action"):
-			get_tree().change_scene_to_packed(targetLVL)
+			get_tree().change_scene_to_file(targetLVL)
 			confirmed.visible = true

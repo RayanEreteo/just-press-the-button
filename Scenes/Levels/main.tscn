@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://7kl2b7bcnmkt"]
 
 [ext_resource type="Material" uid="uid://dqvi175memeln" path="res://Textures/tiles.tres" id="1_nk5xi"]
-[ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="2_7i1ub"]
 [ext_resource type="Material" uid="uid://bfnylj4h0vd8g" path="res://glitch.tres" id="3_w0lsm"]
 [ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="4_tpkgp"]
-[ext_resource type="PackedScene" uid="uid://01ynsx7nbcly" path="res://Scenes/Levels/angle.tscn" id="5_7i1ub"]
+[ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="5_7i1ub"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
 font_size = 40
@@ -137,7 +136,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2723093, 2.011785, 0)
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=398177418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2723093, 2.011785, 0)
 
-[node name="Player" parent="." unique_id=259794836 instance=ExtResource("2_7i1ub")]
+[node name="Player" parent="." unique_id=259794836 instance=ExtResource("5_7i1ub")]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -0.47801685, 1.5459182, -0.15168326)
 speed = 3.25
 
@@ -171,7 +170,7 @@ label_settings = SubResource("LabelSettings_jjvhh")
 
 [node name="Button" parent="." unique_id=1774173384 instance=ExtResource("4_tpkgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.556579, 0.85343254, -0.120196015)
-targetLVL = ExtResource("5_7i1ub")
+targetLVL = "res://Scenes/Levels/angle.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]
 environment = SubResource("Environment_cxt7r")
