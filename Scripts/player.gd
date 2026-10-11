@@ -107,4 +107,4 @@ func activate_glitch(status: bool):
 		entity_close.stop()
 
 func death():
-	print("")
+	get_tree().quit()
