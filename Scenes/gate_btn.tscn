@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bwgupxrtx21jk"]
+
+[ext_resource type="PackedScene" uid="uid://bwshrv64jf7sy" path="res://3DModel/industrial_button/scene.gltf" id="1_bbxvm"]
+[ext_resource type="Script" uid="uid://d14o8ep0yotbw" path="res://Scripts/gate_btn.gd" id="2_am8sk"]
+[ext_resource type="AudioStream" uid="uid://d2guaufdq35e2" path="res://SFX/btn_gate.mp3" id="3_217lq"]
+[ext_resource type="Material" uid="uid://ggj80tqrppep" path="res://Textures/red.tres" id="4_c43xp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxt7r"]
+size = Vector3(1, 0.6538086, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cxt7r"]
+
+[node name="Sketchfab_Scene" unique_id=707759020 instance=ExtResource("1_bbxvm")]
+transform = Transform3D(-9.856919e-08, 2.255, 0, -2.255, -9.856919e-08, 0, 0, 0, 2.255, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=321344354]
+script = ExtResource("2_am8sk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=2118675425]
+transform = Transform3D(1, -9.592327e-14, 0, 9.592327e-14, 1, 0, 0, 0, 1, 0, 0.17309569, 0)
+shape = SubResource("BoxShape3D_cxt7r")
+
+[node name="Click" type="AudioStreamPlayer" parent="." index="2" unique_id=752917053]
+stream = ExtResource("3_217lq")
+
+[node name="StatusLED" type="MeshInstance3D" parent="." index="3" unique_id=1426303061]
+transform = Transform3D(0.019999996, -4.9960036e-16, 0, 4.9960036e-16, 0.019999996, 0, 0, 0, 0.019999996, 0.06896164, 3.014409e-09, -0.0002920231)
+material_override = ExtResource("4_c43xp")
+mesh = SubResource("SphereMesh_cxt7r")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
