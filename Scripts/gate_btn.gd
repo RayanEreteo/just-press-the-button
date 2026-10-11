@@ -5,7 +5,7 @@ var activated = false
 
 var greenMat = preload("res://Textures/green.tres")
 
-@onready var gate = $"../../Gate"
+@onready var gate = $"../../NavigationRegion3D/Gate"
 @onready var click = $"../Click"
 @onready var led = $"../StatusLED"
 

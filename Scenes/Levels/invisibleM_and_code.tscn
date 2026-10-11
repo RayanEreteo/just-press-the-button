@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cfu1v5uhj4mqg" path="res://Scripts/eyeofchange.gd" id="6_uecxj"]
 [ext_resource type="Script" uid="uid://dgyddnkhrdtag" path="res://Scripts/gate.gd" id="7_8fgh1"]
 [ext_resource type="PackedScene" uid="uid://bwgupxrtx21jk" path="res://Scenes/gate_btn.tscn" id="7_uecxj"]
+[ext_resource type="PackedScene" uid="uid://dnv28m8k856n8" path="res://Scenes/Entity.tscn" id="8_c48e4"]
 
 [sub_resource type="Environment" id="Environment_cxt7r"]
 background_energy_multiplier = 0.0
@@ -724,6 +725,10 @@ size = Vector3(0.21765137, 9.954651, 1)
 [node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Gate" unique_id=1648930168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2501297, 5.1706147, 1.1438212)
 size = Vector3(0.21765137, 9.954651, 1)
+
+[node name="Entity" parent="." unique_id=1627610859 node_paths=PackedStringArray("player") instance=ExtResource("8_c48e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.74135, 1.1500014, 3.7244275)
+player = NodePath("../Player")
 
 [connection signal="area_entered" from="EyeOfChange/Area3D" to="EyeOfChange/Area3D" method="_on_area_entered"]
 [connection signal="area_entered" from="EyeOfChange2/Area3D" to="EyeOfChange2/Area3D" method="_on_area_entered"]
