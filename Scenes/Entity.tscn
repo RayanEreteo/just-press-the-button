@@ -6,6 +6,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cxt7r"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxt7r"]
+size = Vector3(1.2808838, 1, 1.2912598)
+
 [node name="Entity" type="CharacterBody3D" unique_id=1627610859]
 script = ExtResource("1_rnyw1")
 
@@ -24,3 +27,11 @@ bus = &"Reverb"
 stream = ExtResource("3_p2pde")
 autoplay = true
 bus = &"Reverb"
+
+[node name="KillTrigger" type="Area3D" parent="." unique_id=1020098375]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillTrigger" unique_id=1142034070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006164551, 0, 0.016967773)
+shape = SubResource("BoxShape3D_cxt7r")
+
+[connection signal="body_entered" from="KillTrigger" to="." method="_on_kill_trigger_body_entered"]

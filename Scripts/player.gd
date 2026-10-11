@@ -105,3 +105,6 @@ func activate_glitch(status: bool):
 		entity_close.play(2.60)
 	if !status && entity_close.playing:
 		entity_close.stop()
+
+func death():
+	print("")

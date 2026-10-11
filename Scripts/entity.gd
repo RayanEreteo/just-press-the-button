@@ -21,3 +21,7 @@ func _physics_process(_delta: float) -> void:
 	
 	velocity = direction * 2.0
 	move_and_slide()
+
+func _on_kill_trigger_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		player.death()
