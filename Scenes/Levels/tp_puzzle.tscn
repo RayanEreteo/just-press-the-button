@@ -517,7 +517,7 @@ speed = 3.25
 
 [node name="Button" parent="." unique_id=1774173384 instance=ExtResource("4_v5i1k")]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -19.637266, 0.85343254, 4.9180965)
-targetLVL = "res://Scenes/Levels/greenlightredlight.tscn"
+targetLVL = "res://Scenes/Levels/invisibleM_and_code.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]
 environment = SubResource("Environment_cxt7r")

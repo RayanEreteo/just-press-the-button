@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://befhcbdt6fesr"]
+
+[ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="1_6btlg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvipn"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Button" unique_id=441199934 instance=ExtResource("1_6btlg")]
+script = null
+
+[node name="Button" parent="StaticBody3D" parent_id_path=PackedInt32Array(28477541) index="1" unique_id=846713158]
+material_override = SubResource("StandardMaterial3D_nvipn")
