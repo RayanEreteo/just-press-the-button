@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dpq00mtxmg8gg" path="res://SFX/3.wav" id="5_52ee3"]
 [ext_resource type="Material" uid="uid://bfnylj4h0vd8g" path="res://glitch.tres" id="6_52ee3"]
 [ext_resource type="AudioStream" uid="uid://t0ea3gpresp2" path="res://SFX/Male_Breathing_Soft,_#1-1791479432168.wav" id="6_nn08x"]
+[ext_resource type="AudioStream" uid="uid://dd5epsssevg8" path="res://SFX/soundreality-code-glitch-398643.mp3" id="8_bhhdu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cxt7r"]
 
@@ -72,3 +73,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="EntityClose" type="AudioStreamPlayer" parent="." unique_id=1270796739]
+stream = ExtResource("8_bhhdu")
+volume_db = -17.334

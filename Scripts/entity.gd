@@ -1,9 +1,9 @@
 extends CharacterBody3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-@export var player: CharacterBody3D
+@onready var player: CharacterBody3D = $"../Player"
 
-func _process(delta: float):
+func _process(_delta: float):
 	var dist = position.distance_to(player.position)
 	if dist < 7:
 		player.activate_glitch(true)

@@ -6,8 +6,6 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cxt7r"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_e4k1b"]
-
 [node name="Entity" type="CharacterBody3D" unique_id=1627610859]
 script = ExtResource("1_rnyw1")
 
@@ -17,11 +15,11 @@ shape = SubResource("CapsuleShape3D_cxt7r")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1154784319]
 debug_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=914916516]
-mesh = SubResource("CapsuleMesh_e4k1b")
-
 [node name="Footstep" type="AudioStreamPlayer3D" parent="." unique_id=2088521768]
 stream = ExtResource("2_4n0f1")
+max_db = 6.0
+autoplay = true
+bus = &"Reverb"
 
 [node name="Speech" type="AudioStreamPlayer3D" parent="." unique_id=1921435362]
 stream = ExtResource("3_p2pde")

@@ -18,6 +18,8 @@ var footstep_distance: float = 0.0
 @onready var flash = $Head/Camera3D/Flash
 @onready var flashaudio = $Head/Camera3D/Flash/FlashAudio
 @onready var flashTrigger = $Head/Camera3D/Flash/FlashTrigger
+@onready var entity_close: AudioStreamPlayer = $EntityClose
+
 var flashDebounce = true
 
 func _ready() -> void:
@@ -99,3 +101,7 @@ func handle_footsteps(delta: float) -> void:
 
 func activate_glitch(status: bool):
 	glitch.visible = status
+	if status && !entity_close.playing:
+		entity_close.play(2.60)
+	if !status && entity_close.playing:
+		entity_close.stop()
