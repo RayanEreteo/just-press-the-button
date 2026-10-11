@@ -14,6 +14,7 @@ var footstep_distance: float = 0.0
 
 @onready var head: Node3D = $Head
 @onready var footstep = $Footstep
+@onready var broken_screen: ColorRect = $CanvasLayer/BrokenScreen
 @onready var glitch = $CanvasLayer/Glitch
 @onready var flash = $Head/Camera3D/Flash
 @onready var flashaudio = $Head/Camera3D/Flash/FlashAudio
@@ -107,4 +108,5 @@ func activate_glitch(status: bool):
 		entity_close.stop()
 
 func death():
-	get_tree().quit()
+	broken_screen.visible = true
+	speed = 0
