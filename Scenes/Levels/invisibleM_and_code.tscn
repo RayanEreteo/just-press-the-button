@@ -101,6 +101,12 @@ stream = ExtResource("6_brdq8")
 [node name="Sketchfab_Scene" parent="." unique_id=1099764826 instance=ExtResource("7_uecxj")]
 transform = Transform3D(-9.856919e-08, -2.255, 0, 2.255, -9.856919e-08, 0, 0, 0, 2.255, -22.155535, 2.1656175, -0.95959866)
 
+[node name="Sketchfab_Scene2" parent="." unique_id=707759020 instance=ExtResource("7_uecxj")]
+transform = Transform3D(-9.856919e-08, -2.255, 0, 2.255, -9.856919e-08, 0, 0, 0, 2.255, -22.155535, 2.1656175, -3.9595985)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=222347251 instance=ExtResource("7_uecxj")]
+transform = Transform3D(-9.856919e-08, -2.255, 0, 2.255, -9.856919e-08, 0, 0, 0, 2.255, -22.155535, 2.1656175, -5.9595985)
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2050039822]
 navigation_mesh = SubResource("NavigationMesh_8fgh1")
 

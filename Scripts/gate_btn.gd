@@ -21,6 +21,7 @@ func _process(_delta: float) -> void:
 	if canPress && !activated:
 		if Input.is_action_just_pressed("action"):
 			gate.btn_activated += 1
+			gate.upd_state()
 			led.material_override = greenMat
 			click.play()
 			activated = true
