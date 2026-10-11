@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dnv28m8k856n8"]
 
 [ext_resource type="Script" uid="uid://43dqnbwclekq" path="res://Scripts/entity.gd" id="1_rnyw1"]
+[ext_resource type="AudioStream" uid="uid://bgr8yhjia7lh4" path="res://SFX/monster_footstep.wav" id="2_4n0f1"]
+[ext_resource type="AudioStream" uid="uid://bo254r5u5kmln" path="res://SFX/freesound_community-monster-breathing-67456.mp3" id="3_p2pde"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cxt7r"]
 
@@ -17,3 +19,11 @@ debug_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=914916516]
 mesh = SubResource("CapsuleMesh_e4k1b")
+
+[node name="Footstep" type="AudioStreamPlayer3D" parent="." unique_id=2088521768]
+stream = ExtResource("2_4n0f1")
+
+[node name="Speech" type="AudioStreamPlayer3D" parent="." unique_id=1921435362]
+stream = ExtResource("3_p2pde")
+autoplay = true
+bus = &"Reverb"
