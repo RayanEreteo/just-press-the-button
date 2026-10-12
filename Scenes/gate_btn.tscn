@@ -28,5 +28,10 @@ transform = Transform3D(0.019999996, -4.9960036e-16, 0, 4.9960036e-16, 0.0199999
 material_override = ExtResource("4_c43xp")
 mesh = SubResource("SphereMesh_cxt7r")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="StatusLED" index="0" unique_id=40007177]
+transform = Transform3D(22.172953, 0, 0, 0, 22.172953, 0, 0, 0, 22.172953, -7.1525574e-07, 14.193572, 0)
+light_color = Color(1, 0, 0, 1)
+omni_range = 0.787
+
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
