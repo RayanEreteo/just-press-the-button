@@ -107,7 +107,6 @@ func handle_footsteps(delta: float) -> void:
 
 	# Add distance traveled this frame
 	footstep_distance += current_speed * delta
-
 	# Time for another footstep
 	if footstep_distance >= footstep_interval:
 		footstep_distance = 0.0

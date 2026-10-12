@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Just Press The Button"
-run/main_scene="uid://fowfqjuponxr"
+run/main_scene="uid://bwf4xsvq3220f"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [audio]
@@ -35,6 +35,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Just Press The Button"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
