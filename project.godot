@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Just Press The Button"
-run/main_scene="uid://dkf0i0pkgospq"
+run/main_scene="uid://rilaw8xekh8w"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [audio]
