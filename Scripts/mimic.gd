@@ -18,11 +18,11 @@ func _ready() -> void:
 	mimic_hide()
 
 func _process(_delta: float):
-	var dist = position.distance_to(player.position)
-	if dist < 7:
-		player.activate_glitch(true)
-	else :
-		player.activate_glitch(false)
+	#var dist = position.distance_to(player.position)
+	#if dist < 7:
+		#player.activate_glitch(true)
+	#else :
+		#player.activate_glitch(false)
 	move_to_target()
 
 func move_to_target() -> void:
