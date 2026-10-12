@@ -169,7 +169,7 @@ text = "Click [MOUSE 1] to press the button."
 label_settings = SubResource("LabelSettings_jjvhh")
 
 [node name="Button" parent="." unique_id=1774173384 instance=ExtResource("4_bde1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.556579, 0.85343254, -0.120196015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.556579, 0.85343254, 3.1741579)
 targetLVL = "res://Scenes/Levels/angle.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1874293319]

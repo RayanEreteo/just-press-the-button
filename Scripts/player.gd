@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export_category("Movement Settings")
 @export var speed: float = 5.0
 @export var mouse_sensitivity: float = 0.003
+@export var controller_sensitivity: float = 3.0 # Speed multiplier for the right joystick
 
 @export_category("Footstep Settings")
 @export var footstep_interval: float = 2.0
@@ -27,6 +28,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _process(delta: float) -> void:
+	# Flashlight Logic
 	if Input.is_action_just_pressed("Flash") && Globals.canFlash && flashDebounce:
 		flashDebounce = false
 		flashTrigger.monitorable = true
@@ -39,7 +41,19 @@ func _process(delta: float) -> void:
 	if flash.light_energy > 0:
 		flash.light_energy -= 0.8 * delta
 
+	# Right Joystick Camera Control (Gamepad)
+	var look_dir: Vector2 = Input.get_vector("cam_left", "cam_right", "cam_up", "cam_down")
+	if look_dir.length_squared() > 0.0:
+		rotate_y(-look_dir.x * controller_sensitivity * delta)
+		head.rotate_x(-look_dir.y * controller_sensitivity * delta)
+		head.rotation.x = clamp(
+			head.rotation.x,
+			deg_to_rad(-89.0),
+			deg_to_rad(89.0)
+		)
+
 func _unhandled_input(event: InputEvent) -> void:
+	# Mouse Look
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 
@@ -56,7 +70,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Get WASD Input Direction
+	# Get WASD / Left Joystick Input Direction
 	var input_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
 	var direction: Vector3 = (
 		transform.basis * Vector3(input_dir.x, 0, input_dir.y)
