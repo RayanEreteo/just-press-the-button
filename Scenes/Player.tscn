@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://t0ea3gpresp2" path="res://SFX/Male_Breathing_Soft,_#1-1791479432168.wav" id="6_nn08x"]
 [ext_resource type="AudioStream" uid="uid://dd5epsssevg8" path="res://SFX/soundreality-code-glitch-398643.mp3" id="8_bhhdu"]
 [ext_resource type="Shader" uid="uid://cfmnf0o5vem43" path="res://broken_screen.gdshader" id="8_megsn"]
+[ext_resource type="AudioStream" uid="uid://cjrvpsma6r25v" path="res://SFX/Death.wav" id="11_ksbbd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cxt7r"]
 
@@ -24,6 +25,14 @@ flip_faces = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxt7r"]
 size = Vector3(0.6077881, 1, 0.8937988)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4k1b"]
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 5.32
+
+[sub_resource type="BoxMesh" id="BoxMesh_cxt7r"]
+size = Vector3(8.927673, 4.426758, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kyqiw"]
 streams_count = 2
@@ -79,6 +88,12 @@ monitorable = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28607178, 0, -1.0440674)
 shape = SubResource("BoxShape3D_cxt7r")
 
+[node name="DeathView" type="MeshInstance3D" parent="Head/Camera3D" unique_id=891677076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26846313, -0.3071289, -0.92420137)
+visible = false
+material_override = SubResource("StandardMaterial3D_e4k1b")
+mesh = SubResource("BoxMesh_cxt7r")
+
 [node name="Footstep" type="AudioStreamPlayer" parent="." unique_id=1444398277]
 stream = SubResource("AudioStreamRandomizer_kyqiw")
 
@@ -115,3 +130,7 @@ mouse_filter = 2
 [node name="EntityClose" type="AudioStreamPlayer" parent="." unique_id=1270796739]
 stream = ExtResource("8_bhhdu")
 volume_db = -17.334
+
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=1208903979]
+stream = ExtResource("11_ksbbd")
+volume_db = 0.869

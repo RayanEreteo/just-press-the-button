@@ -25,3 +25,4 @@ func _physics_process(_delta: float) -> void:
 func _on_kill_trigger_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		player.death()
+		queue_free()

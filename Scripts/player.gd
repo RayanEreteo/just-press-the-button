@@ -10,7 +10,7 @@ extends CharacterBody3D
 
 # Get the gravity from the project settings to keep synced with physics
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+var isDead = false
 var footstep_distance: float = 0.0
 
 @onready var head: Node3D = $Head
@@ -21,6 +21,8 @@ var footstep_distance: float = 0.0
 @onready var flashaudio = $Head/Camera3D/Flash/FlashAudio
 @onready var flashTrigger = $Head/Camera3D/Flash/FlashTrigger
 @onready var entity_close: AudioStreamPlayer = $EntityClose
+@onready var death_view: MeshInstance3D = $Head/Camera3D/DeathView
+@onready var death_sfx: AudioStreamPlayer = $Death
 
 var flashDebounce = true
 
@@ -29,7 +31,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Flashlight Logic
-	if Input.is_action_just_pressed("Flash") && Globals.canFlash && flashDebounce:
+	if Input.is_action_just_pressed("Flash") && Globals.canFlash && flashDebounce && !isDead:
 		flashDebounce = false
 		flashTrigger.monitorable = true
 		flash.light_energy = 2
@@ -54,7 +56,7 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse Look
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and !isDead:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 
 		head.rotate_x(-event.relative.y * mouse_sensitivity)
@@ -121,5 +123,11 @@ func activate_glitch(status: bool):
 		entity_close.stop()
 
 func death():
+	flash.light_energy = 0
+	isDead = true
 	broken_screen.visible = true
 	speed = 0
+	death_view.visible = true
+	death_sfx.play()
+	await get_tree().create_timer(9).timeout
+	get_tree().reload_current_scene()
