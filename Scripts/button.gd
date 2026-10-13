@@ -7,6 +7,7 @@ var canPress = false
 
 @export var isDisabled = false
 @export var targetLVL: String
+@export var wallToDestroy: CSGBox3D
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
@@ -21,6 +22,7 @@ func _process(_delta: float) -> void:
 	if canPress:
 		if Input.is_action_just_pressed("action"):
 			if isDisabled:
+				if wallToDestroy: wallToDestroy.queue_free()
 				click.play()
 				inspect.visible = true
 				await  get_tree().create_timer(2).timeout

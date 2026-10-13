@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cm0yjhi4mjr57"]
+
+[ext_resource type="PackedScene" uid="uid://cxgyakk5lbyku" path="res://Scenes/Button.tscn" id="1_wppnr"]
+[ext_resource type="Script" uid="uid://dbwuiuv44y7xf" path="res://Scripts/Events/final.gd" id="2_gs3rg"]
+
+[node name="ButtonFinal" unique_id=441199934 instance=ExtResource("1_wppnr")]
+script = ExtResource("2_gs3rg")
+activated = false

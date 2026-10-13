@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://boixrqrxj5hav"]
+
+[ext_resource type="Script" uid="uid://d0c4pt2hpd8ei" path="res://Scripts/Fade.gd" id="1_68hfs"]
+[ext_resource type="FontFile" uid="uid://c6vu0yv84fq7f" path="res://VT323-Regular.ttf" id="1_pk4bp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_raxdv"]
+font = ExtResource("1_pk4bp")
+font_size = 40
+
+[node name="FinalScreen" type="Node3D" unique_id=962315585]
+script = ExtResource("1_68hfs")
+
+[node name="Label" type="Label" parent="." unique_id=253668041]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -20.0
+offset_right = 152.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thanks For Playing."
+label_settings = SubResource("LabelSettings_raxdv")

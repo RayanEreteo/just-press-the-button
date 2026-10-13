@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://fowfqjuponxr"]
 
 [ext_resource type="Material" uid="uid://dqvi175memeln" path="res://Textures/tiles.tres" id="1_iaai7"]
+[ext_resource type="PackedScene" uid="uid://cm0yjhi4mjr57" path="res://Scenes/button_final.tscn" id="2_c1jus"]
 [ext_resource type="PackedScene" uid="uid://dxwirsnvi1fnn" path="res://Scenes/Player.tscn" id="2_rwivm"]
 [ext_resource type="PackedScene" uid="uid://befhcbdt6fesr" path="res://Scenes/Button_props.tscn" id="3_bfbvn"]
+[ext_resource type="Script" uid="uid://xg7bu2r8w04e" path="res://Scripts/color_rect.gd" id="4_iaai7"]
+[ext_resource type="AudioStream" uid="uid://l66khrkljkll" path="res://SFX/freesound_community-ticket-validator-88908.mp3" id="6_c1jus"]
+[ext_resource type="AudioStream" uid="uid://bacnfno48m8db" path="res://SFX/static.mp3" id="6_yg1g5"]
+[ext_resource type="AudioStream" uid="uid://1xxqqeb8hyui" path="res://SFX/pillar_rumble.mp3" id="7_03fdi"]
 
 [sub_resource type="Environment" id="Environment_cxt7r"]
 background_mode = 1
@@ -16,6 +21,9 @@ fog_height_density = 0.3299
 fog_depth_curve = 0.6830201
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0809
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxt7r"]
+size = Vector3(1, 5.23645, 12.73645)
 
 [node name="Node3D" type="Node3D" unique_id=266369204]
 
@@ -66,6 +74,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
 size = Vector3(4, 0.3, 4)
 material = ExtResource("1_iaai7")
 
+[node name="ButtonFinal" parent="CSGCombiner3D" unique_id=441199934 node_paths=PackedStringArray("next", "pillar") instance=ExtResource("2_c1jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.301157, 0.36994743, 0.024837554)
+next = NodePath("../ButtonFinal3")
+pillar = NodePath("../../Button3")
+
+[node name="ButtonFinal2" parent="CSGCombiner3D" unique_id=537272175 node_paths=PackedStringArray("next", "pillar") instance=ExtResource("2_c1jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.301157, 0.36994743, 4.0248375)
+activated = true
+next = NodePath("../ButtonFinal")
+pillar = NodePath("../../Button4")
+
+[node name="ButtonFinal3" parent="CSGCombiner3D" unique_id=1818032618 node_paths=PackedStringArray("pillar") instance=ExtResource("2_c1jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.301157, 0.36994743, -3.9751625)
+pillar = NodePath("../../Button5")
+
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=398177418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2723093, 2.011785, 0)
 
@@ -79,8 +102,46 @@ environment = SubResource("Environment_cxt7r")
 [node name="Button3" parent="." unique_id=1101014047 instance=ExtResource("3_bfbvn")]
 transform = Transform3D(-26.080002, 1.4305115e-06, 1.2256861e-13, 1.4305115e-06, 26.080002, 2.2799861e-06, 4.7961645e-14, 2.2799861e-06, -26.08, -80.42427, -0.87249756, 0.64643097)
 
-[node name="Button4" parent="." unique_id=441199934 instance=ExtResource("3_bfbvn")]
+[node name="Button4" parent="." unique_id=829625522 instance=ExtResource("3_bfbvn")]
 transform = Transform3D(-26.080002, 1.4305115e-06, 1.2256861e-13, 1.4305115e-06, 26.080002, 2.2799861e-06, 4.7961645e-14, 2.2799861e-06, -26.08, -80.42427, -0.87249756, 23.646431)
 
 [node name="Button5" parent="." unique_id=1822048080 instance=ExtResource("3_bfbvn")]
 transform = Transform3D(-26.080002, 1.4305115e-06, 1.2256861e-13, 1.4305115e-06, 26.080002, 2.2799861e-06, 4.7961645e-14, 2.2799861e-06, -26.08, -80.42427, -0.87249756, -24.353569)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1737378520]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_iaai7")
+
+[node name="Static" type="AudioStreamPlayer" parent="." unique_id=1126167035]
+stream = ExtResource("6_yg1g5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1141514372]
+stream = ExtResource("6_c1jus")
+
+[node name="Rumb;le" type="AudioStreamPlayer" parent="." unique_id=1592402168]
+stream = ExtResource("7_03fdi")
+volume_db = -7.298
+
+[node name="Wall" type="StaticBody3D" parent="." unique_id=385362967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7640274, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=18336398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.118225, 0.27398682)
+shape = SubResource("BoxShape3D_cxt7r")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Wall" unique_id=987379374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.125643, 2.118225, 0.27398682)
+shape = SubResource("BoxShape3D_cxt7r")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Wall" unique_id=1805953438]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 2.118225, 5.273987)
+shape = SubResource("BoxShape3D_cxt7r")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Wall" unique_id=218711296]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 2.118225, -5.453928)
+shape = SubResource("BoxShape3D_cxt7r")
